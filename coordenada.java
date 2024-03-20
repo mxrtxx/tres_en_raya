@@ -1,34 +1,36 @@
+package tresenraya;
+
 import java.util.Scanner;
 
-public class coordenada {
+public class Coordenada {
 
-    private static int fila;
+    private  int fila;
 
-    protected static int columna;
+    protected  int columna;
 
-    public int getFila() {
+    public  int getFila() {
         return fila;
     }
 
-    public int getColumna() {
+    public  int getColumna() {
         return columna;
     }
 
-    public coordenada(int fila, int columna) {
-        coordenada.fila = fila;
-        coordenada.columna = columna;
+    public Coordenada(int fila, int columna) {
+        this.fila = fila;
+        this.columna = columna;
     }
 
-    public static coordenada pedirPorTeclado() {
+    public static Coordenada pedirPorTeclado() {
 
         Scanner teclado = new Scanner(System.in);
         System.out.println("dime el valor de la fila");
-        coordenada.fila = teclado.nextInt();
+        int filaNueva = teclado.nextInt();
 
         System.out.println("dime el valor de la columna");
-        coordenada.columna = teclado.nextInt();
+        int columnaNueva = teclado.nextInt();
 
-        return  new coordenada (fila,columna);
+        return  new Coordenada(filaNueva,columnaNueva);
     }
 
     }
