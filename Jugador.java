@@ -26,7 +26,7 @@ public class Jugador {
     public void colocarFicha (Tablero tablero){
         Coordenada nuevaCoordenada;
         do{
-            System.out.println("Introduce una coordenada nueva");
+            System.out.println("Introduce una coordenada nueva"+ nombre);
             nuevaCoordenada = Coordenada.pedirPorTeclado();
         }while(!tablero.esVacia(nuevaCoordenada));
             tablero.ponFicha(ficha,nuevaCoordenada);
@@ -34,14 +34,15 @@ public class Jugador {
 
     public void mueveFicha(Tablero tablero){
         System.out.println("Introduce los datos de la ficha que quieres mover");
-            Coordenada moverFicha= Coordenada.pedirPorTeclado();
+        Coordenada moverFicha;
             do{
-                tablero.quitaFicha(moverFicha);
-                colocarFicha(tablero);
-            }while((tablero.hayFicha(ficha,moverFicha)));
+                 moverFicha= Coordenada.pedirPorTeclado();
+            }while((!tablero.hayFicha(ficha,moverFicha)));
+            tablero.quitaFicha(moverFicha);
+            colocarFicha(tablero);
     }
     public void haGanado(Tablero tablero){
-        System.out.println("Partida terminada, ha ganado");
+        System.out.println("Partida terminada, ha ganado "+ nombre);
         tablero.mostrar();
     }
 }
