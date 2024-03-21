@@ -55,8 +55,9 @@ public class Tablero {
     public void mostrar() {
         for (int i = 0; i < filas; i++) {
             for (int e = 0; i < columnas; e++) {
-                System.out.println(tablero[i][e]);
+                System.out.print(tablero[i][e] + " ");
             }
+            System.out.println();
 
         }
     }
